@@ -1,7 +1,7 @@
 export async function getCategories() {
-  // implement here
+  return ['Gabriel, Lucas']
 }
 
-export async function getProductsFromCategoryAndQuery(categoryId, query) {
-  // implement here
-}
+// export async function getProductsFromCategoryAndQuery(categoryId, query) {
+//   // implement here
+// }
