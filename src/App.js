@@ -7,9 +7,9 @@ function App() {
   return (
     <div>
       <CategoryBar />
-      <SearchItems />    
+      <SearchItems />
     </div>
-   
+
 
   );
 }
