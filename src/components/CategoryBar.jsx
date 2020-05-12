@@ -5,7 +5,7 @@ import '../style/CategoryBar.css';
 export default class CategoryBar extends Component {
   constructor(props) {
     super(props);
-    this.state = { categoryList: ['Computador'] };
+    this.state = { categoryList: [] };
   }
 
 
