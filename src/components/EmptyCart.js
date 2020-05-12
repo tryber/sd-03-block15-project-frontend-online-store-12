@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 class EmptyCart extends Component {
   constructor(props) {
@@ -13,14 +14,29 @@ class EmptyCart extends Component {
     if (isCartEmpty) {
       return (
         <div>
-          <FaShoppingCart size={32} data-testid="shopping-cart-button" />
+          <div>
+            <Link to="/ShoppingCart">
+              <button type="button" data-testid="shopping-cart-button">
+                <FaShoppingCart size={32} />
+              </button>
+            </Link>
+            <p>Carrinho de Compras</p>
+          </div>
           <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
         </div>
       );
     }
+
     return (
       <div>
-        <FaShoppingCart data-testid="shopping-cart-button" />
+        <div>
+          <Link to="/ShoppingCart">
+            <button type="button" data-testid="shopping-cart-button">
+              <FaShoppingCart size={32} />
+            </button>
+          </Link>
+          <p>Carrinho de Compras</p>
+        </div>
       </div>
     );
   }
