@@ -8,9 +8,14 @@ export default class CategoryBar extends Component {
     this.state = { categoryList: ['Computador'] };
   }
 
+
   async componentDidMount() {
     const categoryList = await api.getCategories();
-    this.setState({ categoryList });
+    this.callState(categoryList);
+  }
+
+  callState(state) {
+    this.setState(state);
   }
 
   render() {
