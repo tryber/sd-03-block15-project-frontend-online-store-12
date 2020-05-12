@@ -15,7 +15,7 @@ class EmptyCart extends Component {
       return (
         <div>
           <div>
-            <Link to="/ShoppingCart">
+            <Link to="/shopping-cart">
               <button type="button" data-testid="shopping-cart-button">
                 <FaShoppingCart size={32} />
               </button>
@@ -30,11 +30,9 @@ class EmptyCart extends Component {
     return (
       <div>
         <div>
-          <Link to="/ShoppingCart">
-            <button type="button" data-testid="shopping-cart-button">
-              <FaShoppingCart size={32} />
-            </button>
-          </Link>
+          <button type="button" data-testid="shopping-cart-button">
+            <FaShoppingCart size={32} />
+          </button>
           <p>Carrinho de Compras</p>
         </div>
       </div>
