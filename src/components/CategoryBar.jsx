@@ -15,7 +15,7 @@ export default class CategoryBar extends Component {
   }
 
   callState(state) {
-    this.setState(state);
+    this.setState({ categoryList: state });
   }
 
   render() {
