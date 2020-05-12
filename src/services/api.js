@@ -1,5 +1,14 @@
 export async function getCategories() {
-  return ['Gabriel', 'Lucas', 'Soares'];
+  return [{
+    id: 'MLB5672',
+    name: 'Acessórios para Veículos',
+  }, {
+    id: 'MLB271599',
+    name: 'Agro',
+  }, {
+    id: 'MLB1403',
+    name: 'Alimentos e Bebidas',
+  }];
 }
 
 export async function getProductsFromCategoryAndQuery(categoryId, query) {

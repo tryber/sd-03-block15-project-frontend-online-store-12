@@ -23,7 +23,7 @@ export default class CategoryBar extends Component {
     return (
       <div className="category-wrap">
         <p>Categorias: </p>
-        {categoryList.map((cat) => <p data-testid="category" key={cat}>{cat}</p>)}
+        {categoryList.map((cat) => <p data-testid="category" key={cat}>{cat.name}</p>)}
       </div>
     );
   }
