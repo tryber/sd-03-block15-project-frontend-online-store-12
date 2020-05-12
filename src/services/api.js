@@ -1,16 +1,9 @@
 export async function getCategories() {
-  return [{
-    id: 'MLB5672',
-    name: 'Acessórios para Veículos',
-  }, {
-    id: 'MLB271599',
-    name: 'Agro',
-  }, {
-    id: 'MLB1403',
-    name: 'Alimentos e Bebidas',
-  }];
+  const categories = fetch('https://api.mercadolibre.com/sites/MLB/categories');
+  return (await categories).json();
 }
 
 export async function getProductsFromCategoryAndQuery(categoryId, query) {
-  return [categoryId, query];
+  const products = await fetch(`https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}&q=${query}`);
+  return products.json();
 }
