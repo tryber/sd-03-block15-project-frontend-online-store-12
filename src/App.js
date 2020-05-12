@@ -1,12 +1,16 @@
 import React from 'react';
 import SearchItems from './components/SearchItems';
 import './App.css';
+import CategoryBar from './components/CategoryBar';
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <CategoryBar />
       <SearchItems />
     </div>
+
+
   );
 }
 
