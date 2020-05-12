@@ -9,21 +9,17 @@ export default class CategoryBar extends Component {
   }
 
 
-  async componentDidMount() {
-    const categoryList = await api.getCategories();
-    this.callState(categoryList);
+  componentDidMount() {
+    api.getCategories().then((e) => this.setState({ categoryList: e }));
   }
 
-  callState(state) {
-    this.setState({ categoryList: state });
-  }
 
   render() {
     const { categoryList } = this.state;
     return (
       <div className="category-wrap">
         <p>Categorias: </p>
-        {categoryList.map((cat) => <p data-testid="category" key={cat}>{cat.name}</p>)}
+        {categoryList.map((cat) => <p data-testid="category" key={cat.id}>{cat.name}</p>)}
       </div>
     );
   }
