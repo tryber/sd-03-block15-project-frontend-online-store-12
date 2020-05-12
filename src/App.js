@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import CategoryBar from './components/CategoryBar';
 
@@ -21,7 +20,7 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <CategoryBar></CategoryBar>
+    <CategoryBar />
   );
 }
 
