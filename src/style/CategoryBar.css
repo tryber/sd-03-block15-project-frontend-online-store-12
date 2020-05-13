@@ -1,0 +1,7 @@
+.category-wrap {
+  border: 1px solid black;
+  height: fit-content;
+  margin-left: 30px;
+  overflow: scroll;
+  width: 400px;
+}
