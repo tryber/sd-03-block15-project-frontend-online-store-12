@@ -1,5 +1,8 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+
+import { BrowserRouter, Route } from 'react-router-dom';
+import EmptyCart from './components/EmptyCart';
+import ShoppingCart from './pages/ShoppingCart';
 import SearchItems from './components/SearchItems';
 import './App.css';
 import CategoryBar from './components/CategoryBar';
@@ -9,14 +12,16 @@ import EmptyCart from './components/EmptyCart';
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
+
+    <BrowserRouter>
+      <div className="App">
+        <Route path="/pages/shopping-cart" component={ShoppingCart} />
+        <EmptyCart />
         <CategoryBar />
         <SearchItems />
-        <QuantitySelector />
-        <EmptyCart />
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
+
 
 
   );
