@@ -1,6 +1,7 @@
 .category-wrap {
   border: 1px solid black;
-  height: 100vh;
+  height: fit-content;
   margin-left: 30px;
+  overflow: scroll;
   width: 400px;
 }

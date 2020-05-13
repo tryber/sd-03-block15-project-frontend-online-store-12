@@ -10,7 +10,7 @@ export default class CategoryBar extends Component {
 
 
   componentDidMount() {
-    api.getCategories().then((e) => this.setState({ categoryList: e }));
+    api.getCategories().then((categoryList) => this.setState({ categoryList }));
   }
 
 
