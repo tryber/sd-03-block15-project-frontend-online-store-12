@@ -1,36 +1,32 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import AvaliationForm from '../components/AvaliationForm';
+import QuantitySelector from '../components/QuantitySelector';
 
-
-class ProductDetails extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { product: null };
-  }
-
-
+export class ProductDetails extends Component {
   render() {
-    const { price, title, thumbnail, attributes } = this.props.apiResults;
+    const { location: { state: { product } } } = this.props;
+    const { price, title, thumbnail, attributes } = product;
     return (
       <div className="product-detail">
         <div className="product-detail-header">
           <Link to="/">Voltar</Link>
           <h3 data-testid="product-detail-name">
+            `$
             {title}
             {' '}
-            - R$
-            {' '}
+            - R$ $
             {price}
+            `
           </h3>
         </div>
         <div className="product-detail-img">
           <img src={thumbnail} alt="" />
         </div>
-        <div className="product-detail-img">
+        <div className="product-detail-specs">
           <h3>Especificações técnicas</h3>
           {attributes.map((att) => (
-            <li>
+            <li key={att.name}>
               {att.name}
               :
               {' '}
@@ -38,8 +34,9 @@ class ProductDetails extends Component {
             </li>
           ))}
         </div>
+        <QuantitySelector />
+        <AvaliationForm />
       </div>
-
     );
   }
 }

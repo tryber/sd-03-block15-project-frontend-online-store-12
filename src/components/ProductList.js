@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchMessage from './SearchMessage';
+import { ProductCard as Card } from './ProductCard';
 
 class ProductList extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class ProductList extends Component {
     return (
       <div>
         {this.state.products.length && this.state.products.map((product) => (
-          <p data-testid="product" key={product.id}>{product.title}</p>
+          <Card data-testid="product" product={product} key={product.id} />
         ))}
         <SearchMessage items={(xablau) => this.setState(xablau)} />
       </div>
