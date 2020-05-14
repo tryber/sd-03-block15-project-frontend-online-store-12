@@ -13,7 +13,9 @@ export class SearchMessage extends Component {
         <div>
           {this.state.buscaVazia && (
             <p data-testid="home-initial-message">
-              Digite algum termo de pesquisa ou escolha uma categoria.</p>
+              Digite algum termo de pesquisa ou escolha uma categoria.
+
+            </p>
           )}
         </div>
       </div>
