@@ -6,8 +6,10 @@ import SearchItems from './components/SearchItems';
 import './App.css';
 import CategoryBar from './components/CategoryBar';
 
+
 function App() {
   return (
+
     <BrowserRouter>
       <div className="App">
         <Route path="/pages/shopping-cart" component={ShoppingCart} />
