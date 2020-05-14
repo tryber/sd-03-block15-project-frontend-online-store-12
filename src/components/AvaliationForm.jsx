@@ -29,31 +29,43 @@ export default class AvaliationForm extends Component {
     this.setState({ messages: [...messages, { rate, user, message }], user: '', rate: 0, message: '' });
   }
 
+  renderForm() {
+    const { rate, user, message } = this.state;
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <input
+          type="text"
+          value={user}
+          onChange={(e) => this.setState({ user: e.target.value })}
+        />
+        <div className="stars-wrap">
+          <RateStar rate={rate} index={1} onClick={() => this.setRate(1)} />
+          <RateStar rate={rate} index={2} onClick={() => this.setRate(2)} />
+          <RateStar rate={rate} index={3} onClick={() => this.setRate(3)} />
+          <RateStar rate={rate} index={4} onClick={() => this.setRate(4)} />
+          <RateStar rate={rate} index={5} onClick={() => this.setRate(5)} />
+        </div>
+        <textarea
+          data-testid="product-detail-evaluation"
+          value={message}
+          type="text"
+          onChange={(e) => this.setState({ message: e.target.value })}
+        />
+        <button type="submit">Submit</button>
+      </form>
+
+    );
+  }
+
 
   render() {
-    const { rate, user, messages, message } = this.state;
+    const { messages } = this.state;
     return (
       <div className="form-wrap">
         <h1>Avaliações</h1>
         <div>
+          {this.renderForm()}
 
-          <form onSubmit={this.handleSubmit}>
-            <input type="text" value={user} onChange={(e) => this.setState({ user: e.target.value })} />
-            <div className="stars-wrap">
-              <RateStar rate={rate} index={1} onClick={() => this.setRate(1)} />
-              <RateStar rate={rate} index={2} onClick={() => this.setRate(2)} />
-              <RateStar rate={rate} index={3} onClick={() => this.setRate(3)} />
-              <RateStar rate={rate} index={4} onClick={() => this.setRate(4)} />
-              <RateStar rate={rate} index={5} onClick={() => this.setRate(5)} />
-            </div>
-            <textarea
-              data-testid="product-detail-evaluation"
-              value={message}
-              type="text"
-              onChange={(e) => this.setState({ message: e.target.value })}
-            />
-            <button type="submit">Submit</button>
-          </form>
           <div className="avaliations-wrap">
             <ul>
               {messages.map((avaliation) => (
