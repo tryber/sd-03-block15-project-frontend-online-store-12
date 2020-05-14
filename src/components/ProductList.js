@@ -6,6 +6,7 @@ class ProductList extends Component {
     super(props);
     this.state = { products: [] };
   }
+
   render() {
     return (
       <div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import Link from 'react-router-dom';
+import { FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import * as Api from '../services/api';
 
 class ProductDetails extends Component {
@@ -24,11 +25,19 @@ class ProductDetails extends Component {
           <h3 data-testid="product-detail-name">{title}</h3>
           <h4>{price}</h4>
           <img src={thumbnail} alt="/" />
-          <div>
-            <ul>
-              {attributes.map((e) => <li>{`${e.name} : ${e.value_name}`}</li>)}
-            </ul>
-          </div>
+        </div>
+        <div>
+          <ul>
+            {attributes.map((e) => <li>{`${e.name} : ${e.value_name}`}</li>)}
+          </ul>
+        </div>
+        <div>
+          <Link to="/shopping-cart">
+            <button type="button" data-testid="shopping-cart-button">
+              <FaShoppingCart size={32} />
+            </button>
+          </Link>
+          <p>Carrinho de Compras</p>
         </div>
       </div>
     );
