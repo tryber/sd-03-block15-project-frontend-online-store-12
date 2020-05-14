@@ -9,7 +9,7 @@ class ProductList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="search-bar">
         {this.state.products.length && this.state.products.map((product) => (
           <p data-testid="product" key={product.id}>{product.title}</p>
         ))}
