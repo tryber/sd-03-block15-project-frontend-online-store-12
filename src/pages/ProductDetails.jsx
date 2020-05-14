@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import * as Api from '../services/api';
+// import * as Api from '../services/api';
 
 class ProductDetails extends Component {
   constructor(props) {
@@ -10,15 +9,33 @@ class ProductDetails extends Component {
     this.state = { product: null };
   }
 
-  componentDidMount() {
+
+
+  render() {
+    const { price, title, thumbnail, attributes } = this.props.apiResults;
+    return (
+      <div className="product-detail">
+        <div className="product-detail-header">
+          <Link to="/">Voltar</Link>
+          <h3 data-testid="product-detail-name">{title} - R$ {price}</h3>
+        </div>
+        <div className="product-detail-img">
+          <img src={thumbnail} alt="" />
+        </div>
+        <div className="product-detail-img">
+          <h3>Especificações técnicas</h3>
+          {attributes.map((att) => <li>{att.name}: {att.value_name}</li>)}
+        </div>
+      </div>
+
+    /*   componentDidMount() {
     Api.getProductsFromCategoryAndQuery('computador', 'computador').then((results) => {
       const findProduct = results.find((e) => this.props.match.id === e.id);
       this.setState({ product: findProduct });
     });
-  }
+   */
 
-  render() {
-    const { title, thumbnail, price, attributes } = this.state.product;
+    /* const { title, thumbnail, price, attributes } = this.state.product;
     return (
       <div>
         <div>
@@ -40,8 +57,8 @@ class ProductDetails extends Component {
           <p>Carrinho de Compras</p>
         </div>
       </div>
-    );
-  }
+    ); */
+  };
 }
 
 export default ProductDetails;

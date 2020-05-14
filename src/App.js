@@ -18,8 +18,6 @@ function App() {
         <SearchItems />
       </div>
     </BrowserRouter>
-
-
   );
 }
 

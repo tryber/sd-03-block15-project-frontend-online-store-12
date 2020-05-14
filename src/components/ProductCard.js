@@ -1,15 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 
-class ProductCard extends React.Component {
+export class ProductCard extends Component {
   render() {
-    const { title, thumbnail, price, id } = this.props.product;
+    const { product } = this.props;
+    const { id, title, thumbnail, price, onAddToCart } = product;
     return (
-      <div>
-        <span>{title}</span>
+      <div data-testid="product">
+        <h4>{title}</h4>
+        <h5>{id}</h5>
         <img src={thumbnail} alt={title} />
-        <span>{price}</span>
-        <Link to={`/product/${id}`} data-testid="product-detail-link">Details</Link>
+        <h5>{price}</h5>
+        <button
+          type="button"
+          onClick={onAddToCart}
+          data-testid="product-add-to-cart"
+        >
+          Adicionar ao Carrinho
+        </button>
       </div>
     );
   }

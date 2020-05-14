@@ -15,7 +15,7 @@ class EmptyCart extends Component {
       return (
         <div>
           <div>
-            <Link to="/shopping-cart">
+            <Link to="/cart">
               <button type="button" data-testid="shopping-cart-button">
                 <FaShoppingCart size={32} />
               </button>
