@@ -1,24 +1,24 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import EmptyCart from './components/EmptyCart';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ShoppingCart from './pages/ShoppingCart';
-import SearchItems from './components/SearchItems';
+import Home from './pages/Home';
 import './App.css';
-import CategoryBar from './components/CategoryBar';
 import ProductDetails from './pages/ProductDetails';
-import AvaliationForm from './components/AvaliationForm';
+
 
 function App() {
   return (
 
     <BrowserRouter>
       <div className="App">
-        <ProductDetails />
-        <Route path="/pages/shopping-cart" component={ShoppingCart} />
-        <CategoryBar />
-        <EmptyCart />
-        <SearchItems />
-        <AvaliationForm />
+
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/pages/shopping-cart" component={ShoppingCart} />
+          <Route path="/productdetails/:id" render={() => <ProductDetails />} />
+        </Switch>
+
+
       </div>
     </BrowserRouter>
   );
