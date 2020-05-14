@@ -6,16 +6,19 @@ import SearchItems from './components/SearchItems';
 import './App.css';
 import CategoryBar from './components/CategoryBar';
 import ProductDetails from './pages/ProductDetails';
+import AvaliationForm from './components/AvaliationForm';
 
 function App() {
   return (
+
     <BrowserRouter>
       <div className="App">
         <ProductDetails />
         <Route path="/pages/shopping-cart" component={ShoppingCart} />
-        <EmptyCart />
         <CategoryBar />
+        <EmptyCart />
         <SearchItems />
+        <AvaliationForm />
       </div>
     </BrowserRouter>
   );
