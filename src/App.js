@@ -5,14 +5,15 @@ import ShoppingCart from './pages/ShoppingCart';
 import SearchItems from './components/SearchItems';
 import './App.css';
 import CategoryBar from './components/CategoryBar';
+import ProductDetails from './pages/ProductDetails';
 import AvaliationForm from './components/AvaliationForm';
-
 
 function App() {
   return (
 
     <BrowserRouter>
-      <div className="app">
+      <div className="App">
+        <ProductDetails />
         <Route path="/pages/shopping-cart" component={ShoppingCart} />
         <CategoryBar />
         <EmptyCart />
@@ -20,8 +21,6 @@ function App() {
         <AvaliationForm />
       </div>
     </BrowserRouter>
-
-
   );
 }
 
