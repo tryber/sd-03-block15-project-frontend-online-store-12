@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AvaliationForm from '../components/AvaliationForm';
 import QuantitySelector from '../components/QuantitySelector';
+import FreeShipping from '../components/FreeShipping';
 
 class ProductDetails extends Component {
   constructor(props) {
