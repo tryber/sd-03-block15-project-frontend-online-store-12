@@ -13,7 +13,12 @@ class ProductList extends Component {
     return (
       <div className="search-bar">
         {this.state.products.length && this.state.products.map((product) => (
-          <Card data-testid="product" product={product} key={product.id} setItemToCart={setItemToCart} />
+          <Card
+            data-testid="product"
+            product={product}
+            key={product.id}
+            setItemToCart={setItemToCart}
+          />
         ))}
         <SearchMessage items={(xablau) => this.setState(xablau)} />
       </div>

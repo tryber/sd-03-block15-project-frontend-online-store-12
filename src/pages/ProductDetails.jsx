@@ -50,7 +50,6 @@ export class ProductDetails extends Component {
           data-testid="product-add-to-cart"
         >
           Adicionar ao Carrinho
-
         </button>
         <AvaliationForm />
       </div>
