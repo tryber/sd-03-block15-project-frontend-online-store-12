@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 export class ProductCard extends Component {
   render() {
-    const { product } = this.props;
-    const { id, title, thumbnail, price, onAddToCart } = product;
+    const { product, setItemToCart } = this.props;
+    const { id, title, thumbnail, price } = product;
     return (
       <div data-testid="product">
         <h4>{title}</h4>
@@ -13,7 +13,7 @@ export class ProductCard extends Component {
         <h5>{price}</h5>
         <button
           type="button"
-          onClick={onAddToCart}
+          onClick={() => setItemToCart({ id, title, thumbnail, price }, 1)}
           data-testid="product-add-to-cart"
         >
           Adicionar ao Carrinho

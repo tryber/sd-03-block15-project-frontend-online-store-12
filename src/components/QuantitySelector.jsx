@@ -9,6 +9,12 @@ export default class QuantitySelector extends Component {
     this.inc = this.inc.bind(this);
   }
 
+  componentDidUpdate() {
+    const { count } = this.state;
+    const { setQuantity } = this.props;
+    setQuantity(count);
+  }
+
   dec() {
     const { count } = this.state;
     if (count > 0) {
@@ -31,14 +37,6 @@ export default class QuantitySelector extends Component {
           <button onClick={this.dec} type="button">menos</button>
           <p>{count}</p>
           <button onClick={this.inc} type="button">mais</button>
-          <button
-            data-testid="product-detail-add-to-cart"
-            type="button"
-          >
-            Adicionar ao carrinho
-
-          </button>
-
         </div>
 
       </div>
