@@ -14,6 +14,7 @@ class ProductCart extends Component {
   addOne() {
     this.setState({ qtd: this.state.qtd + 1 });
   }
+
   minusOne() {
     if (this.state.qtd > 0) {
       this.setState({ qtd: this.state.qtd - 1 });
