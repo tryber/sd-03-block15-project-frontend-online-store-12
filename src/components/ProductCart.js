@@ -22,13 +22,17 @@ class ProductCart extends Component {
   }
 
   render() {
-    const { title, price, thumbnail } = this.props;
+    const { title, price, thumbnail, availableQuantity } = this.props;
     return (
       <div>
         <p>{title}</p>
         <p>{price}</p>
         <p>{this.state.qtd}</p>
-        <button data-testid="product-increase-quantity" onClick={this.addOne}>+1</button>
+        <button
+          data-testid="product-increase-quantity"
+          disabled={this.state.qtd === availableQuantity}
+          onClick={this.addOne}>+1
+        </button>
         <button data-testid="product-decreate-quantity" onClick={this.minusOne}>-1</button>
         <img alt={title} src={thumbnail} />
       </div>
