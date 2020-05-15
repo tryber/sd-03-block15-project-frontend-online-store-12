@@ -5,7 +5,10 @@ import '../style/CategoryBar.css';
 export default class CategoryBar extends Component {
   constructor(props) {
     super(props);
-    this.state = { categoryList: [] };
+    this.state = {
+      categoryList: [],
+      selectedCategory: null,
+    };
   }
 
 
@@ -19,7 +22,22 @@ export default class CategoryBar extends Component {
     return (
       <div className="category-wrap">
         <p>Categorias: </p>
-        {categoryList.map((cat) => <p data-testid="category" key={cat.id}>{cat.name}</p>)}
+        {categoryList.map((cat) => (
+          <label htmlFor="input">
+            {cat.name}
+            <input
+              type="radio"
+              name="cat"
+              value={cat.id}
+              data-testid="category"
+              key={cat.id}
+              onChange={(e) => this.setState({ selectedCategory: e.target.value })}
+            />
+            <br />
+          </label>
+        ))}
+
+
       </div>
     );
   }

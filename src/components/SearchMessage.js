@@ -4,22 +4,27 @@ import * as api from '../services/api';
 class SearchMessage extends Component {
   constructor(props) {
     super(props);
-    this.state = { buscaVazia: true };
+    this.state = { search: '' };
     this.getItems = this.getItems.bind(this);
   }
 
   async getItems() {
-    const products = await api.getProductsFromCategoryAndQuery('computer', 'mouse');
-    this.props.items({ products: products.results });
+    const { items, categoryRef: { current: { state: { selectedCategory } } } } = this.props;
+    const { search } = this.state;
+
+    const products = await api.getProductsFromCategoryAndQuery(selectedCategory, search);
+    console.log(products.results);
+    items({ products: products.results });
   }
 
   render() {
+    const { search } = this.state;
     return (
       <div>
-        <input data-testid="query-input" />
-        <button data-testid="query-button" onClick={this.getItems}>Search</button>
+        <input value={search} data-testid="query-input" onChange={(e) => this.setState({ search: e.target.value })} />
+        <button type="button" data-testid="query-button" onClick={this.getItems}>Search</button>
         <div>
-          {this.state.buscaVazia && (
+          {search && (
             <p data-testid="home-initial-message">
               Digite algum termo de pesquisa ou escolha uma categoria.
 
