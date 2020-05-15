@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import FreeShipping from './FreeShipping';
 
 export class ProductCard extends Component {
   render() {
     const { product, setItemToCart } = this.props;
-    const { id, title, thumbnail, price } = product;
-
+    const { id, title, thumbnail, price, shipping } = product;
+    const { free_shipping: freeShipping } = shipping;
     return (
       <div data-testid="product">
+        <div data-testid="free-shipping">
+          { freeShipping && <FreeShipping /> }
+        </div>
         <h4>{title}</h4>
         <h5>{id}</h5>
         <img src={thumbnail} alt={title} />
