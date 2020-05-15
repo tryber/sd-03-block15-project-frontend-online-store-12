@@ -5,7 +5,7 @@ class ProductCart extends Component {
     super(props);
     this.state = {
       qtd: props.qtd,
-      preco: props.price * this.state.qtd
+      preco: props.price * this.state.qtd,
     };
     this.addOne = this.addOne.bind(this);
     this.minusOne = this.minusOne.bind(this);
