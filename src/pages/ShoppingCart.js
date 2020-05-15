@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
-import EmptyCart from '../components/EmptyCart';
+import ProductCart from '../components/ProductCart';
+
 
 class Cart extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { cart: [] };
-  }
-
   render() {
-    const { cart } = this.state;
-    if (cart.length === 0) return (<EmptyCart />);
+    const { shoppingCart } = this.props;
+    console.log(this.props);
+    if (shoppingCart.length === 0) {
+      return (
+        <div>
+          <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
+        </div>
+      );
+    }
+
     return (
       <div>
-        <p>Test Blank Page</p>
+        <p>Carrinho de Compras</p>
+        {shoppingCart.map(({ item: { title, thumbnail, price, availableQuantity }, qty: qtd }) => (
+          <ProductCart
+            title={title}
+            thumbnail={thumbnail}
+            price={price}
+            qtd={qtd}
+            availableQuantity={availableQuantity}
+          />
+        ))}
+
       </div>
     );
   }

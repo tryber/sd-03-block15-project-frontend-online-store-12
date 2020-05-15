@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 import AvaliationForm from '../components/AvaliationForm';
 import QuantitySelector from '../components/QuantitySelector';
 
-export class ProductDetails extends Component {
+class ProductDetails extends Component {
   constructor(props) {
     super(props);
-
     this.state = { quantidade: 0 };
     this.setQuantity = this.setQuantity.bind(this);
   }
