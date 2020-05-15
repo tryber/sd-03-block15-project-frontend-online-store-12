@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import ProductCart from '../components/ProductCard';
+import ProductCart from '../components/ProductCart';
 
 
 class Cart extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { shoppingCart: [] };
-  }
-
-
   render() {
-    const { shoppingCart } = this.state;
+    const { shoppingCart } = this.props;
+    console.log(this.props);
     if (shoppingCart.length === 0) {
       return (
         <div>
@@ -23,7 +17,7 @@ class Cart extends Component {
     return (
       <div>
         <p>Carrinho de Compras</p>
-        {shoppingCart.map(({ title, thumbnail, price, qtd, availableQuantity }) => (
+        {shoppingCart.map(({ item: { title, thumbnail, price, availableQuantity }, qty: qtd }) => (
           <ProductCart
             title={title}
             thumbnail={thumbnail}

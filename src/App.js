@@ -37,7 +37,7 @@ class App extends React.Component {
           <CartButton />
           <Switch>
             <Route path="/payment/" component={PaymentPage} />
-            <Route path="/shopping-cart" render={() => <ShoppingCart />} />
+            <Route path="/shopping-cart" render={() => <ShoppingCart shoppingCart={this.state.shoppingCart} />} />
             <Route
               path="/productdetails/:id"
               render={({ location }) => (
