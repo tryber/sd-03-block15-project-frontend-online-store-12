@@ -3,7 +3,10 @@ import React, { Component } from 'react';
 class ProductCart extends Component {
   constructor(props) {
     super(props);
-    this.state = { qtd: props.qtd };
+    this.state = {
+      qtd: props.qtd,
+      preco: props.price * this.state.qtd,
+    };
     this.addOne = this.addOne.bind(this);
     this.minusOne = this.minusOne.bind(this);
   }
@@ -19,14 +22,15 @@ class ProductCart extends Component {
   }
 
   render() {
+    const { title, price, thumbnail } = this.props;
     return (
       <div>
-        <p>nome</p>
-        <p>preco</p>
+        <p>{title}</p>
+        <p>{price}</p>
         <p>{this.state.qtd}</p>
         <button data-testid="product-increase-quantity" onClick={this.addOne}>+1</button>
         <button data-testid="product-decreate-quantity" onClick={this.minusOne}>-1</button>
-        <img alt="Imagem do produto" src="ImageSrc" />
+        <img alt={title} src={thumbnail} />
       </div>
     );
   }
