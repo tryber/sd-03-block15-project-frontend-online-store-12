@@ -21,7 +21,11 @@ class SearchMessage extends Component {
     const { search } = this.state;
     return (
       <div>
-        <input value={search} data-testid="query-input" onChange={(e) => this.setState({ search: e.target.value })} />
+        <input
+          value={search}
+          data-testid="query-input"
+          onChange={(e) => this.setState({ search: e.target.value })}
+        />
         <button type="button" data-testid="query-button" onClick={this.getItems}>Search</button>
         <div>
           {search && (
