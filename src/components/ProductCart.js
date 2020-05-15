@@ -31,7 +31,8 @@ class ProductCart extends Component {
         <button
           data-testid="product-increase-quantity"
           disabled={this.state.qtd === availableQuantity}
-          onClick={this.addOne}>+1
+          onClick={this.addOne}
+        >+1
         </button>
         <button data-testid="product-decreate-quantity" onClick={this.minusOne}>-1</button>
         <img alt={title} src={thumbnail} />
