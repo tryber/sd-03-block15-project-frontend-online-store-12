@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export class ProductCard extends Component {
   render() {
@@ -17,6 +18,7 @@ export class ProductCard extends Component {
         >
           Adicionar ao Carrinho
         </button>
+        <Link to={{ pathname: `/productdetails/${id}`, state: { product } }}>Detalhes</Link>
       </div>
     );
   }

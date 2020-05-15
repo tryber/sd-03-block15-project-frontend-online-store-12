@@ -7,6 +7,7 @@ import ProductDetails from './pages/ProductDetails';
 import PaymentPage from './pages/PaymentPage';
 
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -23,22 +24,16 @@ class App extends React.Component {
 
   render() {
     return (
-
       <BrowserRouter>
         <div className="App">
           <Switch>
-
             <Route path="/payment/" component={PaymentPage} />
             <Route path="/shopping-cart" component={ShoppingCart} />
             <Route path="/productdetails/:id" render={() => <ProductDetails />} />
             <Route exact path="/" component={Home} />
-
           </Switch>
-
         </div>
       </BrowserRouter>
-
-
     );
   }
 }
