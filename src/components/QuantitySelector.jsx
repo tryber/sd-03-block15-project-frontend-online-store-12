@@ -9,10 +9,12 @@ export default class QuantitySelector extends Component {
     this.inc = this.inc.bind(this);
   }
 
-  componentDidUpdate() {
-    const { count } = this.state;
-    const { setQuantity } = this.props;
-    setQuantity(count);
+  componentDidUpdate(prevProps, prevStates) {
+    if (prevStates.count !== this.state.count) {
+      const { count } = this.state;
+      const { setQuantity } = this.props;
+      setQuantity(count);
+    }
   }
 
   dec() {

@@ -37,7 +37,12 @@ class App extends React.Component {
             <Route path="/shopping-cart" render={() => <ShoppingCart />} />
             <Route
               path="/productdetails/:id"
-              render={() => <ProductDetails setItemToCart={this.setItemToCart} />}
+              render={({ location }) => (
+                <ProductDetails
+                  location={location}
+                  setItemToCart={this.setItemToCart}
+                />
+              )}
             />
             <Route
               exact
