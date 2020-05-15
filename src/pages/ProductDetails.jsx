@@ -24,9 +24,7 @@ export class ProductDetails extends Component {
         <div className="product-detail-header">
           <Link to="/">Voltar</Link>
           <h3 data-testid="product-detail-name">
-            {title}
-            R$
-            {price}
+            {`${title} - R$ ${price}`}
           </h3>
         </div>
         <div className="product-detail-img">
@@ -36,10 +34,7 @@ export class ProductDetails extends Component {
           <h3>Especificações técnicas</h3>
           {attributes.map((att) => (
             <li key={att.name}>
-              {att.name}
-              :
-              {' '}
-              {att.value_name}
+              {`${att.name} : ${att.value_name}`}
             </li>
           ))}
         </div>
