@@ -14,37 +14,23 @@ class App extends React.Component {
     this.setItemToCart = this.setItemToCart.bind(this);
   }
 
-
-        <Switch>
-          <Route path="/pages/shopping-cart" component={ShoppingCart} />
-          <Route path="/productdetails/:id" component={ProductDetails} />
-          <Route exact path="/" component={Home} />
-        </Switch>
-
   setItemToCart(item, qty) {
     const { shoppingCart } = this.state;
     this.setState({ shoppingCart: [...shoppingCart, { item, qty }] });
   }
 
 
-
   render() {
     return (
-
       <BrowserRouter>
         <div className="App">
           <Switch>
-
             <Route path="/shopping-cart" component={ShoppingCart} />
             <Route path="/productdetails/:id" render={() => <ProductDetails />} />
             <Route exact path="/" component={Home} />
-
           </Switch>
-
         </div>
       </BrowserRouter>
-
-
     );
   }
 }
