@@ -43,7 +43,11 @@ export default class PaymentForms extends Component {
     return (
       <label htmlFor="input">
         Email
-        <input type="email" value={email} onChange={(e) => this.setState({ email: e.target.value })} />
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => this.setState({ email: e.target.value })}
+        />
       </label>
     );
   }
@@ -53,7 +57,11 @@ export default class PaymentForms extends Component {
     return (
       <label htmlFor="input">
         Telefone
-        <input type="number" value={telefone} onChange={(e) => this.setState({ telefone: e.target.value })} />
+        <input
+          type="number"
+          value={telefone}
+          onChange={(e) => this.setState({ telefone: e.target.value })}
+        />
       </label>
     );
   }
@@ -63,7 +71,11 @@ export default class PaymentForms extends Component {
     return (
       <label htmlFor="input">
         CEP
-        <input type="number" value={cep} onChange={(e) => this.setState({ cep: e.target.value })} />
+        <input
+          type="number"
+          value={cep}
+          onChange={(e) => this.setState({ cep: e.target.value })}
+        />
       </label>
     );
   }
@@ -73,7 +85,11 @@ export default class PaymentForms extends Component {
     return (
       <label htmlFor="input">
         Endereço
-        <input type="text" value={endereço} onChange={(e) => this.setState({ endereço: e.target.value })} />
+        <input
+          type="text"
+          value={endereço}
+          onChange={(e) => this.setState({ endereço: e.target.value })}
+        />
       </label>
     );
   }
@@ -83,7 +99,11 @@ export default class PaymentForms extends Component {
     return (
       <label htmlFor="input">
         Complemento
-        <input type="text" value={complemento} onChange={(e) => this.setState({ complemento: e.target.value })} />
+        <input
+          type="text"
+          value={complemento}
+          onChange={(e) => this.setState({ complemento: e.target.value })}
+        />
       </label>
     );
   }
@@ -93,7 +113,11 @@ export default class PaymentForms extends Component {
     return (
       <label htmlFor="input">
         Número
-        <input type="number" value={numero} onChange={(e) => this.setState({ numero: e.target.value })} />
+        <input
+          type="number"
+          value={numero}
+          onChange={(e) => this.setState({ numero: e.target.value })}
+        />
       </label>
     );
   }
@@ -103,7 +127,11 @@ export default class PaymentForms extends Component {
     return (
       <label htmlFor="input">
         Cidade
-        <input type="text" value={cidade} onChange={(e) => this.setState({ cidade: e.target.value })} />
+        <input
+          type="text"
+          value={cidade}
+          onChange={(e) => this.setState({ cidade: e.target.value })}
+        />
       </label>
     );
   }
@@ -113,7 +141,11 @@ export default class PaymentForms extends Component {
     return (
       <label htmlFor="input">
         Estado
-        <input type="text" value={estado} onChange={(e) => this.setState({ estado: e.target.value })} />
+        <input
+          type="text"
+          value={estado}
+          onChange={(e) => this.setState({ estado: e.target.value })}
+        />
       </label>
     );
   }

@@ -6,7 +6,6 @@ import './App.css';
 import ProductDetails from './pages/ProductDetails';
 import PaymentPage from './pages/PaymentPage';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
