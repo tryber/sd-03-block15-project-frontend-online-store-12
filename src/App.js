@@ -16,7 +16,15 @@ class App extends React.Component {
 
   setItemToCart(item, qty) {
     const { shoppingCart } = this.state;
-    this.setState({ shoppingCart: [...shoppingCart, { item, qty }] });
+    const isItemThere = shoppingCart.findIndex((e) => e.item.id === item.id);
+    if (isItemThere >= 0) {
+      console.log('dentroDoIf');
+      const cart = [...shoppingCart];
+      cart[isItemThere].qty += qty;
+      this.setState({ shoppingCart: cart });
+    } else {
+      this.setState({ shoppingCart: [...shoppingCart, { item, qty }] });
+    }
   }
 
 
@@ -25,9 +33,9 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="App">
           <Switch>
-            <Route path="/shopping-cart" component={ShoppingCart} />
-            <Route path="/productdetails/:id" render={() => <ProductDetails />} />
-            <Route exact path="/" component={Home} />
+            <Route path="/shopping-cart" render={() => <ShoppingCart />} />
+            <Route path="/productdetails/:id" render={() => <ProductDetails setItemToCart={this.setItemToCart} />} />
+            <Route exact path="/" render={() => <Home setItemToCart={this.setItemToCart} />} />
           </Switch>
         </div>
       </BrowserRouter>

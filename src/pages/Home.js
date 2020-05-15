@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import SearchItems from '../components/SearchItems';
 import CategoryBar from '../components/CategoryBar';
 import '../style/Home.css';
+import ProductList from '../components/ProductList';
 
 
 export default class Home extends Component {
   render() {
+    const { setItemToCart } = this.props;
     return (
       <div className="homepage">
         <CategoryBar />
-        <SearchItems />
+        <ProductList setItemToCart={setItemToCart} />
       </div>
     );
   }
