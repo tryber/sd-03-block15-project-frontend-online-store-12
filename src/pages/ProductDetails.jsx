@@ -3,7 +3,21 @@ import { Link } from 'react-router-dom';
 import AvaliationForm from '../components/AvaliationForm';
 import QuantitySelector from '../components/QuantitySelector';
 
+<<<<<<< HEAD
 export class ProductDetails extends Component {
+=======
+class ProductDetails extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { quantidade: 0 };
+    this.setQuantity = this.setQuantity.bind(this);
+  }
+
+  setQuantity(quantidade) {
+    this.setState({ quantidade });
+  }
+
+>>>>>>> 4845797302e34fda22e8f35124009c6d7bf61f89
   render() {
     const { location: { state: { product } } } = this.props;
     const { price, title, thumbnail, attributes, shipping } = product;

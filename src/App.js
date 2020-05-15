@@ -4,7 +4,9 @@ import ShoppingCart from './pages/ShoppingCart';
 import Home from './pages/Home';
 import './App.css';
 import ProductDetails from './pages/ProductDetails';
+import CartButton from './components/CartButton';
 import PaymentPage from './pages/PaymentPage';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -27,14 +29,30 @@ class App extends React.Component {
     }
   }
 
+  renderShoppingCart() {
+    const { shoppingCart } = this.state;
+    return (
+      <Route
+        path="/shopping-cart"
+        render={() => (
+          <ShoppingCart
+            shoppingCart={shoppingCart}
+          />
+        )}
+      />
+    );
+  }
+
 
   render() {
     return (
       <BrowserRouter>
         <div className="App">
+          <CartButton />
           <Switch>
             <Route path="/payment/" component={PaymentPage} />
-            <Route path="/shopping-cart" render={() => <ShoppingCart />} />
+            {this.renderShoppingCart()}
+
             <Route
               path="/productdetails/:id"
               render={({ location }) => (
