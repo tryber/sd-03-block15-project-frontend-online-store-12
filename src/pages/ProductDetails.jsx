@@ -12,12 +12,9 @@ export class ProductDetails extends Component {
         <div className="product-detail-header">
           <Link to="/">Voltar</Link>
           <h3 data-testid="product-detail-name">
-            `$
             {title}
-            {' '}
-            - R$ $
+            R$
             {price}
-            `
           </h3>
         </div>
         <div className="product-detail-img">

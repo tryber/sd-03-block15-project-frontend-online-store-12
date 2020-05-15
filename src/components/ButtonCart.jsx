@@ -19,7 +19,6 @@ class ButtonCart extends Component {
 
   render() {
     const { redirect } = this.state;
-    const { setItemToCart } = this.props;
 
     if (redirect) {
       return <Redirect to="/cart" />;
