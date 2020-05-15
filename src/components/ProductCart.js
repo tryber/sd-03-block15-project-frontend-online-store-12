@@ -11,6 +11,7 @@ class ProductCart extends Component {
   addOne() {
     this.setState({ qtd: this.state.qtd + 1 });
   }
+
   minusOne() {
     if (this.state.qtd > 0) {
       this.setState({ qtd: this.state.qtd - 1 });
@@ -20,8 +21,8 @@ class ProductCart extends Component {
   render() {
     return (
       <div>
-        <p>{'nome'}</p>
-        <p>{'preco'}</p>
+        <p>nome</p>
+        <p>preco</p>
         <p>{this.state.qtd}</p>
         <button data-testid="product-increase-quantity" onClick={this.addOne}>+1</button>
         <button data-testid="product-decreate-quantity" onClick={this.minusOne}>-1</button>

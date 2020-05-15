@@ -4,6 +4,7 @@ import ShoppingCart from './pages/ShoppingCart';
 import Home from './pages/Home';
 import './App.css';
 import ProductDetails from './pages/ProductDetails';
+import CartButton from './components/CartButton';
 
 
 class App extends React.Component {
@@ -25,6 +26,7 @@ class App extends React.Component {
 
       <BrowserRouter>
         <div className="App">
+          <CartButton />
           <Switch>
 
             <Route path="/shopping-cart" component={ShoppingCart} />
