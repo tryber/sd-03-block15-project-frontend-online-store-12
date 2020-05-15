@@ -9,11 +9,11 @@ class ProductList extends Component {
   }
 
   render() {
-    const { setItemToCart, categoryRef } = this.props;
+    const { setItemToCart, selectedCategory } = this.props;
     const { products } = this.state;
     return (
       <div className="search-bar">
-        <SearchMessage categoryRef={categoryRef} items={(xablau) => this.setState(xablau)} />
+        <SearchMessage selectedCategory={selectedCategory} items={(xablau) => this.setState(xablau)} />
         {products.length && products.map((product) => (
           <Card
             data-testid="product"

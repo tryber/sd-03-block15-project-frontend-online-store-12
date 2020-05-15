@@ -5,7 +5,6 @@ import ProductCart from '../components/ProductCart';
 class Cart extends Component {
   render() {
     const { shoppingCart } = this.props;
-    console.log(this.props);
     if (shoppingCart.length === 0) {
       return (
         <div>
@@ -19,6 +18,7 @@ class Cart extends Component {
         <p>Carrinho de Compras</p>
         {shoppingCart.map(({ item: { title, thumbnail, price, availableQuantity }, qty: qtd }) => (
           <ProductCart
+            key={title}
             title={title}
             thumbnail={thumbnail}
             price={price}

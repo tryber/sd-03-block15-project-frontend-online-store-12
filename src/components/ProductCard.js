@@ -10,9 +10,9 @@ export class ProductCard extends Component {
     return (
       <div data-testid="product">
         <div data-testid="free-shipping">
-          { freeShipping && <FreeShipping /> }
+          {freeShipping && <FreeShipping />}
         </div>
-        <h4>{title}</h4>
+        <h4 data-testid="product-detail-name">{title}</h4>
         <h5>{id}</h5>
         <img src={thumbnail} alt={title} />
         <h5>{price}</h5>
@@ -23,7 +23,7 @@ export class ProductCard extends Component {
         >
           Adicionar ao Carrinho
         </button>
-        <Link to={{ pathname: `/productdetails/${id}`, state: { product } }}>Detalhes</Link>
+        <Link data-testid="product-detail-link" to={{ pathname: `/productdetails/${id}`, state: { product } }}>Detalhes</Link>
       </div>
     );
   }
