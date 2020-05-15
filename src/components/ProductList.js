@@ -8,12 +8,28 @@ class ProductList extends Component {
     this.state = { products: [] };
   }
 
+  lowestOrHigest(option) {
+    const { products } = this.state;
+    if (option.target.value === 'lowest') {
+      const lowest = products.sort((prod1, prod2) => prod1.price - prod2.price);
+      this.setState({ products: lowest });
+    } else if (option.target.value === 'highest') {
+      const lowest = products.sort((prod1, prod2) => prod2.price - prod1.price);
+      this.setState({ products: lowest });
+    }
+  }
+
   render() {
     const { setItemToCart, categoryRef } = this.props;
     const { products } = this.state;
     return (
       <div className="search-bar">
-        <SearchMessage categoryRef={categoryRef} items={(xablau) => this.setState(xablau)} />
+        <select onChange={(e) => this.lowestOrHigest(e)}>
+          <option>No filter</option>
+          <option value={'lowest'}>Lowest price</option>
+          <option value={'highest'}>Highest price</option>
+        </select>
+        <SearchMessage categoryRef={categoryRef} items={(item) => this.setState(item)} />
         {products.length && products.map((product) => (
           <Card
             data-testid="product"
