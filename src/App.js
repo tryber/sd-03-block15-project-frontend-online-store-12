@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ShoppingCart from './pages/ShoppingCart';
 import Home from './pages/Home';
 import './App.css';
-import ProductDetails from './pages/ProductDetails';
+import { ProductDetails } from './pages/ProductDetails';
 
 
 class App extends React.Component {
@@ -22,21 +22,15 @@ class App extends React.Component {
 
   render() {
     return (
-
       <BrowserRouter>
         <div className="App">
           <Switch>
-
             <Route path="/shopping-cart" component={ShoppingCart} />
             <Route path="/productdetails/:id" render={() => <ProductDetails />} />
             <Route exact path="/" component={Home} />
-
           </Switch>
-
         </div>
       </BrowserRouter>
-
-
     );
   }
 }
