@@ -10,7 +10,7 @@ class ProductList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="search-bar">
         {this.state.products.length && this.state.products.map((product) => (
           <Card data-testid="product" product={product} key={product.id} />
         ))}
