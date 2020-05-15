@@ -29,23 +29,30 @@ class App extends React.Component {
     }
   }
 
+  renderShoppingCart() {
+    const { shoppingCart } = this.state;
+    return (
+      <Route
+        path="/shopping-cart"
+        render={() => (
+          <ShoppingCart
+            shoppingCart={shoppingCart}
+          />
+        )}
+      />
+    );
+  }
+
 
   render() {
-    const { shoppingCart } = this.state;
     return (
       <BrowserRouter>
         <div className="App">
           <CartButton />
           <Switch>
             <Route path="/payment/" component={PaymentPage} />
-            <Route
-              path="/shopping-cart"
-              render={() => (
-                <ShoppingCart
-                  shoppingCart={shoppingCart}
-                />
-              )}
-            />
+            {this.renderShoppingCart()}
+
             <Route
               path="/productdetails/:id"
               render={({ location }) => (
