@@ -28,8 +28,22 @@ class ProductCart extends Component {
         <p>{title}</p>
         <p>{price}</p>
         <p>{qtd}</p>
-        <button type="button" data-testid="product-increase-quantity" onClick={this.addOne}>+1</button>
-        <button type="button" data-testid="product-decreate-quantity" onClick={this.minusOne}>-1</button>
+        <button
+          type="button"
+          data-testid="product-increase-quantity"
+          onClick={this.addOne}
+        >
+          +1
+
+        </button>
+        <button
+          type="button"
+          data-testid="product-decreate-quantity"
+          onClick={this.minusOne}
+        >
+          -1
+
+        </button>
         <img alt={title} src={thumbnail} />
       </div>
     );
