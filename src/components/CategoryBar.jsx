@@ -29,6 +29,7 @@ export default class CategoryBar extends Component {
               value={cat.id}
               data-testid="category"
               onChange={(e) => setCategory(e.target.value)}
+
             />
             <br />
           </label>
