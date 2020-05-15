@@ -21,8 +21,7 @@ class ProductCart extends Component {
   }
 
   render() {
-
-    const { title, price, thumbnail, availableQuantity } = this.props;
+    const { title, price, thumbnail } = this.props;
     const { qtd } = this.state;
 
     return (
