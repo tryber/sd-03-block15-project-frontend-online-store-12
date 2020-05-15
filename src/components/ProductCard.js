@@ -5,6 +5,7 @@ export class ProductCard extends Component {
   render() {
     const { product, setItemToCart } = this.props;
     const { id, title, thumbnail, price } = product;
+
     return (
       <div data-testid="product">
         <h4>{title}</h4>
