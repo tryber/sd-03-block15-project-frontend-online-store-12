@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ProductCart from '../components/ProductCart';
+import ProductCart from '../components/ProductCard';
+
 
 class Cart extends Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class Cart extends Component {
             availableQuantity={availableQuantity}
           />
         ))}
+
       </div>
     );
   }

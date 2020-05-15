@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import './App.css';
 import ProductDetails from './pages/ProductDetails';
 import CartButton from './components/CartButton';
+import PaymentPage from './pages/PaymentPage';
 
 
 class App extends React.Component {
@@ -17,28 +18,44 @@ class App extends React.Component {
 
   setItemToCart(item, qty) {
     const { shoppingCart } = this.state;
-    this.setState({ shoppingCart: [...shoppingCart, { item, qty }] });
+    const isItemThere = shoppingCart.findIndex((e) => e.item.id === item.id);
+    if (isItemThere >= 0) {
+      console.log('dentroDoIf');
+      const cart = [...shoppingCart];
+      cart[isItemThere].qty += qty;
+      this.setState({ shoppingCart: cart });
+    } else {
+      this.setState({ shoppingCart: [...shoppingCart, { item, qty }] });
+    }
   }
 
 
   render() {
     return (
-
       <BrowserRouter>
         <div className="App">
           <CartButton />
           <Switch>
-
-            <Route path="/shopping-cart" component={ShoppingCart} />
-            <Route path="/productdetails/:id" render={() => <ProductDetails />} />
-            <Route exact path="/" component={Home} />
+            <Route path="/payment/" component={PaymentPage} />
+            <Route path="/shopping-cart" render={() => <ShoppingCart />} />
+            <Route
+              path="/productdetails/:id"
+              render={({ location }) => (
+                <ProductDetails
+                  location={location}
+                  setItemToCart={this.setItemToCart}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/"
+              render={() => <Home setItemToCart={this.setItemToCart} />}
+            />
 
           </Switch>
-
         </div>
       </BrowserRouter>
-
-
     );
   }
 }
