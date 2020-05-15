@@ -17,6 +17,7 @@ export class ProductDetails extends Component {
 
   render() {
     const { quantidade } = this.state;
+    console.log(this.props);
     const { location: { state: { product } }, setItemToCart } = this.props;
     const { id, price, title, thumbnail, attributes } = product;
     return (
