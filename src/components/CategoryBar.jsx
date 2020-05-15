@@ -23,14 +23,13 @@ export default class CategoryBar extends Component {
       <div className="category-wrap">
         <p>Categorias: </p>
         {categoryList.map((cat) => (
-          <label htmlFor="input">
+          <label key={cat.id} htmlFor="input">
             {cat.name}
             <input
               type="radio"
               name="cat"
               value={cat.id}
               data-testid="category"
-              key={cat.id}
               onChange={(e) => this.setState({ selectedCategory: e.target.value })}
             />
             <br />
