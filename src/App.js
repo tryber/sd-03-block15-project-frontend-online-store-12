@@ -53,7 +53,7 @@ class App extends React.Component {
         <div className="App">
           <CartButton />
           <Switch>
-            <Route path="/payment/" component={PaymentPage} />
+            <Route path="/payment" component={PaymentPage} />
             {this.renderShoppingCart()}
 
             <Route
