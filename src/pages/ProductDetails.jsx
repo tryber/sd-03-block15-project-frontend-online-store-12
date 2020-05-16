@@ -38,7 +38,11 @@ class ProductDetails extends Component {
         <div data-testid="free-shipping">
           {freeShipping && <FreeShipping />}
         </div>
-        <QuantitySelector product={product} setQuantity={this.setQuantity} setItemToCart={setItemToCart} />
+        <QuantitySelector
+          product={product}
+          setQuantity={this.setQuantity}
+          setItemToCart={setItemToCart}
+        />
         <AvaliationForm />
       </div>
     );
