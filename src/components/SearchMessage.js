@@ -12,7 +12,7 @@ class SearchMessage extends Component {
   componentDidUpdate(prevProps) {
     const { selectedCategory } = this.props;
     if (prevProps.selectedCategory !== selectedCategory) {
-      this.setState({ selectedCategory }, () => this.getItems());
+      this.fakeSetState(selectedCategory);
     }
   }
 
@@ -21,6 +21,10 @@ class SearchMessage extends Component {
     const { search, selectedCategory } = this.state;
     const products = await api.getProductsFromCategoryAndQuery(selectedCategory, search);
     items({ products: products.results });
+  }
+
+  fakeSetState(selectedCategory) {
+    this.setState({ selectedCategory }, () => this.getItems());
   }
 
   render() {
