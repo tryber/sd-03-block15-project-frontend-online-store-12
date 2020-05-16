@@ -4,17 +4,27 @@ import * as api from '../services/api';
 class SearchMessage extends Component {
   constructor(props) {
     super(props);
-    this.state = { search: '' };
+    this.state = { search: '', selectedCategory: ' ' };
     this.getItems = this.getItems.bind(this);
   }
 
-  async getItems() {
-    const { items, categoryRef: { current: { state: { selectedCategory } } } } = this.props;
-    const { search } = this.state;
 
+  componentDidUpdate(prevProps) {
+    const { selectedCategory } = this.props;
+    if (prevProps.selectedCategory !== selectedCategory) {
+      this.fakeSetState(selectedCategory);
+    }
+  }
+
+  async getItems() {
+    const { items } = this.props;
+    const { search, selectedCategory } = this.state;
     const products = await api.getProductsFromCategoryAndQuery(selectedCategory, search);
-    console.log(products.results);
     items({ products: products.results });
+  }
+
+  fakeSetState(selectedCategory) {
+    this.setState({ selectedCategory }, () => this.getItems());
   }
 
   render() {
@@ -28,12 +38,11 @@ class SearchMessage extends Component {
         />
         <button type="button" data-testid="query-button" onClick={this.getItems}>Search</button>
         <div>
-          {search && (
-            <p data-testid="home-initial-message">
-              Digite algum termo de pesquisa ou escolha uma categoria.
 
-            </p>
-          )}
+          <p data-testid="home-initial-message">
+            {search.length === 0 ? 'Digite algum termo de pesquisa ou escolha uma categoria.' : null}
+          </p>
+
         </div>
       </div>
     );

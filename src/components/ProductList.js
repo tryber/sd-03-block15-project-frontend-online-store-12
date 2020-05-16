@@ -20,16 +20,16 @@ class ProductList extends Component {
   }
 
   render() {
-    const { setItemToCart, categoryRef } = this.props;
+    const { setItemToCart, selectedCategory } = this.props;
     const { products } = this.state;
     return (
       <div className="search-bar">
         <select onChange={(e) => this.lowestOrHigest(e)}>
           <option>No filter</option>
-          <option value={'lowest'}>Lowest price</option>
-          <option value={'highest'}>Highest price</option>
+          <option value="lowest">Lowest price</option>
+          <option value="highest">Highest price</option>
         </select>
-        <SearchMessage categoryRef={categoryRef} items={(item) => this.setState(item)} />
+        <SearchMessage selectedCategory={selectedCategory} items={(item) => this.setState(item)} />
         {products.length && products.map((product) => (
           <Card
             data-testid="product"

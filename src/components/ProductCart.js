@@ -26,9 +26,9 @@ class ProductCart extends Component {
 
     return (
       <div>
-        <p>{title}</p>
+        <p data-testid="shopping-cart-product-name">{title}</p>
         <p>{price}</p>
-        <p>{qtd}</p>
+        <p data-testid="shopping-cart-product-quantity">{qtd}</p>
         <button
           type="button"
           data-testid="product-increase-quantity"
@@ -39,7 +39,7 @@ class ProductCart extends Component {
         </button>
         <button
           type="button"
-          data-testid="product-decreate-quantity"
+          data-testid="product-decrease-quantity"
           onClick={this.minusOne}
         >
           -1

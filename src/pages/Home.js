@@ -7,15 +7,21 @@ import ProductList from '../components/ProductList';
 export default class Home extends Component {
   constructor(props) {
     super(props);
-    this.category = React.createRef();
+    this.state = { selectedCategory: '' };
+    this.setCategory = this.setCategory.bind(this);
+  }
+
+  setCategory(category) {
+    this.setState({ selectedCategory: category });
   }
 
   render() {
     const { setItemToCart } = this.props;
+    const { selectedCategory } = this.state;
     return (
       <div className="homepage">
-        <CategoryBar ref={this.category} />
-        <ProductList categoryRef={this.category} setItemToCart={setItemToCart} />
+        <CategoryBar setCategory={this.setCategory} />
+        <ProductList selectedCategory={selectedCategory} setItemToCart={setItemToCart} />
       </div>
     );
   }

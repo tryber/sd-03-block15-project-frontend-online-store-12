@@ -5,10 +5,7 @@ import '../style/CategoryBar.css';
 export default class CategoryBar extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      categoryList: [],
-      selectedCategory: null,
-    };
+    this.state = { categoryList: [] };
   }
 
 
@@ -19,6 +16,7 @@ export default class CategoryBar extends Component {
 
   render() {
     const { categoryList } = this.state;
+    const { setCategory } = this.props;
     return (
       <div className="category-wrap">
         <p>Categorias: </p>
@@ -30,7 +28,8 @@ export default class CategoryBar extends Component {
               name="cat"
               value={cat.id}
               data-testid="category"
-              onChange={(e) => this.setState({ selectedCategory: e.target.value })}
+              onChange={(e) => setCategory(e.target.value)}
+
             />
             <br />
           </label>
