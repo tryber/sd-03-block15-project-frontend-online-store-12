@@ -25,6 +25,7 @@ class App extends React.Component {
       cart[isItemThere].qty += qty;
       this.setState({ shoppingCart: cart });
     } else {
+      if (qty === 0) qty = 1;
       this.setState({ shoppingCart: [...shoppingCart, { item, qty }] });
     }
   }
