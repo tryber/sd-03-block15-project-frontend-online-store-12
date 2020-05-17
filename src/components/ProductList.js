@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchMessage from './SearchMessage';
 import { ProductCard as Card } from './ProductCard';
+import '../style/ProductList.css';
 
 class ProductList extends Component {
   constructor(props) {
@@ -23,8 +24,8 @@ class ProductList extends Component {
     const { setItemToCart, selectedCategory } = this.props;
     const { products } = this.state;
     return (
-      <div className="search-bar">
-        <select onChange={(e) => this.lowestOrHigest(e)}>
+      <div className="filter-container">
+        <select className="filter-btn" onChange={(e) => this.lowestOrHigest(e)}>
           <option>No filter</option>
           <option value="lowest">Lowest price</option>
           <option value="highest">Highest price</option>

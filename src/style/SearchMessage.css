@@ -1,0 +1,36 @@
+.search-bar-container{
+  font-family: Roboto, sans-serif;
+  display: flex;
+}
+
+.search-bar-input {
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+  border: 3px solid rgb(113,219,212);
+  color: #9DBFAF;
+  height: 20px;
+  outline: none;
+  padding: 5px;
+  width: 100%;
+}
+
+.search-bar-input:focus{
+  color: rgb(113,219,212);
+}
+
+.search-bar-btn {
+  background: rgb(113,219,212);
+  border-radius: 0 5px 5px 0;
+  border: 1px solid rgb(113,219,212);
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  height: 36px;
+  text-align: center;
+  width: 40px;
+}
+
+.search-bar-message {
+  color: rgb(252,250,241);
+  padding: 1em 0;
+}

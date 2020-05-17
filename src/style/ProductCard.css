@@ -48,13 +48,16 @@ h1, h2, h3, h4, h5, div, p, button, img {
 
 .product-card-link {
   color: rgba(0,0,0,0.5);
-  font-weight: 400;
-  padding: 1em 0;
+  font-weight: 400  ;
+  padding: 0.7em 0;
   text-decoration: none;
+  text-transform: uppercase;
+  width: 25%;
 }
 
 .product-card-link:hover {
   color: rgb(113,219,212);
+  text-decoration: underline;
 }
 
 .product-card-right {

@@ -19,10 +19,9 @@ export default class CategoryBar extends Component {
     const { setCategory } = this.props;
     return (
       <div className="category-wrap">
-        <p>Categorias: </p>
+        <p className="category-wrap-title">Categorias: </p>
         {categoryList.map((cat) => (
           <label key={cat.id} htmlFor="input">
-            {cat.name}
             <input
               type="radio"
               name="cat"
@@ -31,6 +30,7 @@ export default class CategoryBar extends Component {
               onChange={(e) => setCategory(e.target.value)}
 
             />
+            {cat.name}
             <br />
           </label>
         ))}
