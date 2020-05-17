@@ -6,7 +6,7 @@ export default class FreeShipping extends Component {
     return (
       <div>
         <FaShippingFast />
-        <p>Frete Grátis!</p>
+        <p data-testid="free-shipping">Frete Grátis!</p>
       </div>
     );
   }

@@ -31,9 +31,12 @@ export default class QuantitySelector extends Component {
   }
 
   addToCart() {
-    const { setItemToCart, product: { id, title, thumbnail, price } } = this.props;
+    const {
+      setItemToCart,
+      product: { id, title, thumbnail, price, available_quantity: availableQuantity },
+    } = this.props;
     const { count } = this.state;
-    setItemToCart({ id, title, thumbnail, price }, count);
+    setItemToCart({ id, title, thumbnail, price, availableQuantity }, count);
   }
 
   render() {

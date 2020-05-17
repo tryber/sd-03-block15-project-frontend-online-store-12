@@ -19,7 +19,6 @@ class ProductDetails extends Component {
     const { location: { state: { product } }, setItemToCart } = this.props;
     const { price, title, thumbnail, attributes, shipping } = product;
     const { free_shipping: freeShipping } = shipping;
-    console.log(freeShipping);
     return (
       <div className="product-detail">
         <div className="product-detail-header">

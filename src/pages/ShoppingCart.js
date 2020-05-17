@@ -5,7 +5,7 @@ import ProductCart from '../components/ProductCart';
 
 class Cart extends Component {
   render() {
-    const { shoppingCart } = this.props;
+    const { shoppingCart, setItemToCart } = this.props;
     if (shoppingCart.length === 0) {
       return (
         <div>
@@ -17,7 +17,7 @@ class Cart extends Component {
     return (
       <div>
         <p>Carrinho de Compras</p>
-        {shoppingCart.map(({ item: { title, thumbnail, price, availableQuantity }, qty: qtd }) => (
+        {shoppingCart.map(({ item: { id, title, thumbnail, price, availableQuantity }, qty: qtd }) => (
           <ProductCart
             key={title}
             title={title}
@@ -25,6 +25,8 @@ class Cart extends Component {
             price={price}
             qtd={qtd}
             availableQuantity={availableQuantity}
+            setItemToCart={setItemToCart}
+            itemID={id}
           />
         ))}
         <Link to={{ pathname: 'payment', state: { shoppingCart } }}>

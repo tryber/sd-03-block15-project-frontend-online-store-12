@@ -20,7 +20,6 @@ class App extends React.Component {
     const { shoppingCart } = this.state;
     const isItemThere = shoppingCart.findIndex((e) => e.item.id === item.id);
     if (isItemThere >= 0) {
-      console.log('dentroDoIf');
       const cart = [...shoppingCart];
       cart[isItemThere].qty += qty;
       this.setState({ shoppingCart: cart });
@@ -40,6 +39,7 @@ class App extends React.Component {
         render={() => (
           <ShoppingCart
             shoppingCart={shoppingCart}
+            setItemToCart={this.setItemToCart}
           />
         )}
       />
@@ -48,10 +48,11 @@ class App extends React.Component {
 
 
   render() {
+    const { shoppingCart } = this.state;
     return (
       <BrowserRouter>
         <div className="App">
-          <CartButton />
+          <CartButton cart={shoppingCart} />
           <Switch>
             <Route path="/payment" component={PaymentPage} />
             {this.renderShoppingCart()}

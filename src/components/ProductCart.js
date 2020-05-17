@@ -9,14 +9,20 @@ class ProductCart extends Component {
   }
 
   addOne() {
+    const { setItemToCart, itemID, availableQuantity } = this.props;
     const { qtd } = this.state;
-    this.setState({ qtd: qtd + 1 });
+    if (qtd < availableQuantity) {
+      this.setState({ qtd: qtd + 1 });
+      setItemToCart({ id: itemID }, 1);
+    }
   }
 
   minusOne() {
     const { qtd } = this.state;
+    const { setItemToCart, itemID } = this.props;
     if (qtd > 0) {
       this.setState({ qtd: qtd - 1 });
+      setItemToCart({ id: itemID }, -1);
     }
   }
 
