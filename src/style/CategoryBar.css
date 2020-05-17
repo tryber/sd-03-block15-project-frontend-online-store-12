@@ -1,11 +1,11 @@
 .category-wrap {
-  background-color: white;
+  background-color: rgb(252,250,241);
   border: 1px solid black;
   font-family: Roboto, sans-serif;
   height: fit-content;
   overflow: scroll;
   padding-left: 30px;
-  width: 400px;
+  width: 300px;
 }
 
 .category-wrap-title {
