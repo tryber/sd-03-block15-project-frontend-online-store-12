@@ -19,13 +19,13 @@
   border: 3px solid rgb(113, 219, 212);
   border-radius: 5px 0 0 5px;
   border-right: none;
-  color: #9dbfaf; 
+  color: #9dbfaf;
   height: 20px;
   padding: 5px;
   width: 100%;
 }
 
-.search-bar-input:focus{
+.search-bar-input:focus {
   color: rgb(113, 219, 212);
   outline: none;
 }
