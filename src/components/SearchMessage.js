@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { FaSearch } from 'react-icons/fa';
 import * as api from '../services/api';
+import '../style/SearchMessage.css';
 
 class SearchMessage extends Component {
   constructor(props) {
@@ -30,19 +32,27 @@ class SearchMessage extends Component {
   render() {
     const { search } = this.state;
     return (
-      <div>
-        <input
-          value={search}
-          data-testid="query-input"
-          onChange={(e) => this.setState({ search: e.target.value })}
-        />
-        <button type="button" data-testid="query-button" onClick={this.getItems}>Search</button>
+      <div className="search-message-container">
+        <div className="search-bar-container">
+          <input
+            className="search-bar-input"
+            value={search}
+            data-testid="query-input"
+            onChange={(e) => this.setState({ search: e.target.value })}
+          />
+          <button
+            className="search-bar-btn"
+            type="button"
+            data-testid="query-button"
+            onClick={this.getItems}
+          >
+            <FaSearch size={30} />
+          </button>
+        </div>
         <div>
-
-          <p data-testid="home-initial-message">
+          <p className="search-bar-message" data-testid="home-initial-message">
             {search.length === 0 ? 'Digite algum termo de pesquisa ou escolha uma categoria.' : null}
           </p>
-
         </div>
       </div>
     );
