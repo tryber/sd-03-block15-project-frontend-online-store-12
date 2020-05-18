@@ -6,11 +6,12 @@ export class ProductCard extends Component {
   render() {
     const { product, setItemToCart } = this.props;
     const { id, title, thumbnail, price, shipping } = product;
+    const { available_quantity: availableQuantity } = product;
     const { free_shipping: freeShipping } = shipping;
     return (
       <div data-testid="product">
-        <div data-testid="free-shipping">
-          {freeShipping && <FreeShipping />}
+        <div>
+          {freeShipping === true && <FreeShipping />}
         </div>
         <h4 data-testid="product-detail-name">{title}</h4>
         <h5>{id}</h5>
@@ -18,7 +19,7 @@ export class ProductCard extends Component {
         <h5>{price}</h5>
         <button
           type="button"
-          onClick={() => setItemToCart({ id, title, thumbnail, price }, 1)}
+          onClick={() => setItemToCart({ id, title, thumbnail, price, availableQuantity }, 1)}
           data-testid="product-add-to-cart"
         >
           Adicionar ao Carrinho

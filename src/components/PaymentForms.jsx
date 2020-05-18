@@ -23,7 +23,12 @@ export default class PaymentForms extends Component {
     return (
       <label htmlFor="input">
         Nome
-        <input type="text" value={nome} onChange={(e) => this.setState({ nome: e.target.value })} />
+        <input
+          data-testid="checkout-fullname"
+          type="text"
+          value={nome}
+          onChange={(e) => this.setState({ nome: e.target.value })}
+        />
       </label>
     );
   }
@@ -33,7 +38,12 @@ export default class PaymentForms extends Component {
     return (
       <label htmlFor="input">
         CPF
-        <input type="number" value={cpf} onChange={(e) => this.setState({ cpf: e.target.value })} />
+        <input
+          type="text"
+          data-testid="checkout-cpf"
+          value={cpf}
+          onChange={(e) => this.setState({ cpf: e.target.value })}
+        />
       </label>
     );
   }
@@ -45,6 +55,7 @@ export default class PaymentForms extends Component {
         Email
         <input
           type="email"
+          data-testid="checkout-email"
           value={email}
           onChange={(e) => this.setState({ email: e.target.value })}
         />
@@ -58,7 +69,8 @@ export default class PaymentForms extends Component {
       <label htmlFor="input">
         Telefone
         <input
-          type="number"
+          type="text"
+          data-testid="checkout-phone"
           value={telefone}
           onChange={(e) => this.setState({ telefone: e.target.value })}
         />
@@ -72,7 +84,8 @@ export default class PaymentForms extends Component {
       <label htmlFor="input">
         CEP
         <input
-          type="number"
+          type="text"
+          data-testid="checkout-cep"
           value={cep}
           onChange={(e) => this.setState({ cep: e.target.value })}
         />
@@ -101,6 +114,7 @@ export default class PaymentForms extends Component {
         Complemento
         <input
           type="text"
+          data-testid="checkout-address"
           value={complemento}
           onChange={(e) => this.setState({ complemento: e.target.value })}
         />
