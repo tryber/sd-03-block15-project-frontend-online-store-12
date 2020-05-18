@@ -40,7 +40,12 @@ class SearchMessage extends Component {
             data-testid="query-input"
             onChange={(e) => this.setState({ search: e.target.value })}
           />
-          <button className="search-bar-btn" type="button" data-testid="query-button" onClick={this.getItems}>
+          <button
+            className="search-bar-btn"
+            type="button"
+            data-testid="query-button"
+            onClick={this.getItems}
+          >
             <FaSearch size={30} />
           </button>
         </div>

@@ -1,11 +1,11 @@
-.filter-container {
- margin: 1em 1em;
+.filter-btn {
+ background-color:rgb(252,250,241);
  font-family: Roboto, sans-serif;
- height: fit-content;
- background-color: rgb(43, 136, 109);
 }
 
-.filter-btn {
+.filter-container {
+ background-color: rgb(43, 136, 109);
  font-family: Roboto, sans-serif;
- background-color:rgb(252,250,241);
+ height: fit-content;
+ margin: 1em 1em;
 }
