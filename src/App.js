@@ -12,8 +12,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { shoppingCart: [] };
+    this.state = { shoppingCart: JSON.parse(localStorage.getItem('cart')) || [] };
     this.setItemToCart = this.setItemToCart.bind(this);
+  }
+
+  componentWillUnmount() {
+    const { shoppingCart } = this.state;
+    localStorage.setItem('cart', JSON.stringify(shoppingCart));
   }
 
   setItemToCart(item, qty) {
@@ -30,6 +35,7 @@ class App extends React.Component {
       this.setState({ shoppingCart: [...shoppingCart, { item, qty: qtd }] });
     }
   }
+
 
   renderShoppingCart() {
     const { shoppingCart } = this.state;
