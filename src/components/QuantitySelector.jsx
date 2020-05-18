@@ -7,6 +7,7 @@ export default class QuantitySelector extends Component {
     this.state = { count: 0 };
     this.dec = this.dec.bind(this);
     this.inc = this.inc.bind(this);
+    this.addToCart = this.addToCart.bind(this);
   }
 
   componentDidUpdate(prevProps, prevStates) {
@@ -29,6 +30,15 @@ export default class QuantitySelector extends Component {
     this.setState({ count: count + 1 });
   }
 
+  addToCart() {
+    const {
+      setItemToCart,
+      product: { id, title, thumbnail, price, available_quantity: availableQuantity },
+    } = this.props;
+    const { count } = this.state;
+    setItemToCart({ id, title, thumbnail, price, availableQuantity }, count);
+  }
+
   render() {
     const { count } = this.state;
     return (
@@ -39,6 +49,13 @@ export default class QuantitySelector extends Component {
           <button onClick={this.dec} type="button">menos</button>
           <p>{count}</p>
           <button onClick={this.inc} type="button">mais</button>
+          <button
+            type="button"
+            data-testid="product-detail-add-to-cart"
+            onClick={this.addToCart}
+          >
+            Add To Cart
+          </button>
         </div>
 
       </div>

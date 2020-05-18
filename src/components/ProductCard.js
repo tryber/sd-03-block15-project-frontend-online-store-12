@@ -7,6 +7,7 @@ export class ProductCard extends Component {
   render() {
     const { product, setItemToCart } = this.props;
     const { id, title, thumbnail, price, shipping } = product;
+    const { available_quantity: availableQuantity } = product;
     const { free_shipping: freeShipping } = shipping;
     return (
       <div className="product-card-container" data-testid="product">
@@ -14,7 +15,7 @@ export class ProductCard extends Component {
           <img className="product-card-thumbnail" src={thumbnail} alt={title} />
         </div>
         <div className="product-card-right">
-          <div className="product-card-shipping" data-testid="free-shipping">
+          <div className="product-card-shipping">
             {freeShipping && <FreeShipping />}
           </div>
           <h4 className="product-card-title" data-testid="product-detail-name">{title}</h4>
@@ -24,12 +25,14 @@ export class ProductCard extends Component {
           <button
             className="product-card-btn"
             type="button"
-            onClick={() => setItemToCart({ id, title, thumbnail, price }, 1)}
+            onClick={() => setItemToCart({ id, title, thumbnail, price, availableQuantity }, 1)}
             data-testid="product-add-to-cart"
           >
             Adicionar ao Carrinho
           </button>
         </div>
+        {/* ///////////////////////////////////////////////// */}
+
       </div>
     );
   }

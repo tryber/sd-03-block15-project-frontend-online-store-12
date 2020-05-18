@@ -16,10 +16,9 @@ class ProductDetails extends Component {
   }
 
   render() {
-    const { location: { state: { product } } } = this.props;
+    const { location: { state: { product } }, setItemToCart } = this.props;
     const { price, title, thumbnail, attributes, shipping } = product;
     const { free_shipping: freeShipping } = shipping;
-    console.log(freeShipping);
     return (
       <div className="product-detail">
         <div className="product-detail-header">
@@ -38,7 +37,11 @@ class ProductDetails extends Component {
         <div data-testid="free-shipping">
           {freeShipping && <FreeShipping />}
         </div>
-        <QuantitySelector setQuantity={this.setQuantity} />
+        <QuantitySelector
+          product={product}
+          setQuantity={this.setQuantity}
+          setItemToCart={setItemToCart}
+        />
         <AvaliationForm />
       </div>
     );
