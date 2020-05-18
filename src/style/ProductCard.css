@@ -1,4 +1,4 @@
-h1 ,h2 ,h3 ,h4 ,h5 ,div ,p ,button ,img {
+h1 , h2 , h3 , h4 , h5 , div , p , button , img {
   margin: 0;
   padding: 0;
 }
@@ -28,7 +28,7 @@ h1 ,h2 ,h3 ,h4 ,h5 ,div ,p ,button ,img {
   background-color: white;
   box-shadow: 10px 9px 0 -6px black;
   display: flex;
-  font-family: Roboto, sans-serif;
+  font-family: Roboto , sans-serif;
   justify-content: center;
   margin: 1em 0 0 1em;
   width: 70%;
