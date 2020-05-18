@@ -1,7 +1,7 @@
 .search-bar-btn {
-  background: rgb(113,219,212);
+  background: rgb(113, 219, 212);
+  border: 1px solid rgb(113, 219, 212);  
   border-radius: 0 5px 5px 0;
-  border: 1px solid rgb(113,219,212);
   color: white;
   cursor: pointer;
   font-size: 20px;
@@ -12,13 +12,13 @@
 
 .search-bar-container{
   display: flex;
-  font-family: Roboto, sans-serif;
+  font-family: Roboto ,sans-serif;
 }
 
 .search-bar-input {
+  border: 3px solid rgb(113,219,212);
   border-radius: 5px 0 0 5px;
   border-right: none;
-  border: 3px solid rgb(113,219,212);
   color: #9DBFAF;
   height: 20px;
   padding: 5px;
@@ -33,6 +33,6 @@
 
 
 .search-bar-message {
-  color: rgb(252,250,241);
+  color: rgb(252, 250, 241);
   padding: 1em 0;
 }
